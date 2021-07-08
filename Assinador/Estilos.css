@@ -1,0 +1,9 @@
+body{background-color:  #8c0333}
+
+table{
+  background:url("../assets/img/ufmalogo.png") no-repeat; 
+  background-size: 100% 100%;
+  filter:alpha(opacity=50);
+  filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0.5);
+  opacity:.50;
+}

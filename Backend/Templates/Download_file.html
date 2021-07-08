@@ -1,0 +1,24 @@
+<html>
+  <head>
+		<div class="box1">
+			<title> Assinador Digital </title>
+			<link rel="stylesheet" type="text/css" href= "{{ url_for('static',filename='css/estilos.css') }}">
+			</head>
+
+			<body>
+				<center>
+				<h1><font face="Arial"> <font color="#fff">Assinador Digital</font> </font> <br/></h1>
+				<h2><font color="#fff">Olá. Essa é a Hash do seu arquivo, não compartilhe com ninguém. Utilize apenas para verificar a autenticidade junto ao seu destinatário:</font> </font> <br/>
+					<div><font face="Arial"> <font color="#fff">{{hash}}</font> </font> <br/></div>
+				</h2>
+
+				<a href="/download_file/{{pdf_name}}" id="Download" style="display:none"></a>
+				</center>
+			</body>
+		</div>
+
+	<script> 
+        document.getElementById("Download").click()
+	</script>
+
+</html>

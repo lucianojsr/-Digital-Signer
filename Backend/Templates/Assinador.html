@@ -1,0 +1,52 @@
+<html>
+  <head>
+	<title> Assinador Digital </title>
+	<link rel="stylesheet" type="text/css" href= "{{ url_for('static',filename='css/estilos.css') }}">
+	</head>
+
+	<body>
+		<div class="box1">
+			<center> <font color="fff">
+				<h1> <font face="Arial"> <font color="#fff">Assinador Digital</font> </font> <br /> </h1>
+			
+				<h2><font face="Arial"> <font color="#fff">Olá</font> </font> <br />
+					<div><font face="Arial"><font color="#fff">{{name}}, assine seu documento aqui:</font> </font> <br /></div>
+				</h2>
+				<form enctype="multipart/form-data" method="POST" action="/uploadpdf" id="redirect">
+					<input class="button formbackgound" id="signfile" type="file" name="file" accept="application/pdf">
+					<input type="hidden" name="name" value="{{name}}">
+					<input type="hidden" name="email" value="{{email}}">
+				</form>
+
+				<h2><font face="Arial"><font color="#fff">Verifique a autenticidade do seu documento aqui:</font> </font> <br /></h2>
+				<form enctype="multipart/form-data" method="POST" action="/verifypdf" id="redirect2">
+					<input class="button formbackgound" id="fileverify" type="file" name="file" accept="application/pdf">
+				</form>
+				</font>
+			</center>
+		</div>
+	</body>
+
+	<script> 
+	var googlename = '{{name}}'
+	var googleemail = '{{email}}' 
+	</script>
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+	<script src="https://unpkg.com/pdf-lib@1.16.0/dist/pdf-lib.min.js"></script>
+
+	<!-- <script src="assets/js/pdfmodify.js"></script> -->
+
+	<script  src= "{{ url_for('static',filename='js/pdfmodify.js') }}"></script>
+
+	<script> 
+		function OnLoadFile2(){
+			  console.log("funcionou")
+			  setTimeout(function(){ document.getElementById("redirect2").submit() }, 3000); 
+		}
+		$("#fileverify").on("change",OnLoadFile2); 
+	</script>
+
+
+</html>

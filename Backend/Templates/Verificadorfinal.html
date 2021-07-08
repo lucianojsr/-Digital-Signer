@@ -1,0 +1,23 @@
+<html>
+  <head>
+	<title> Assinador Digital </title>
+	<link rel="stylesheet" type="text/css" href= "{{ url_for('static',filename='css/estilos.css') }}">
+	</head>
+
+	<body>
+		<div class="box1">
+			<center>
+			<h1><font face="Arial"> <font color="#fff">Assinador Digital</font> </font> <br/></h1>
+			<h2><font color="#fff">Olá, Esse é código de verificação do seu arquivo. Verifique junto ao seu remetente para garantir a autenticidade do arquivo:</font> </font> <br/> 
+				<div><font face="Arial"> <font color="#fff">{{hash}}</font> </font> <br/></div>
+			</h2>
+			</center>
+		</div>
+	</body>
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+	<script src="https://unpkg.com/pdf-lib@1.16.0/dist/pdf-lib.min.js"></script>
+
+
+</html>
